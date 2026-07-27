@@ -1,2 +1,0 @@
-# atigma
-site for Atigma
