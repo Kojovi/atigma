@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATIGMA — Elegant Womenswear, Made to Order</title>
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topband">
+  <div class="brand-row">
+    <div class="brand">
+      <img class="brand-mark" src="images/logo.png" alt="ATIGMA">
+      <div class="brand-text">
+        <h1>Atigma</h1>
+        <p>Strength, refinement &amp; quiet confidence</p>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs">
+    <a class="nav-tab active" href="index.html">Catalogue</a>
+    <a class="nav-tab" href="about.html">About</a>
+    <a class="nav-tab" href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <p class="eyebrow">Made-to-order &amp; bespoke</p>
+  <h2 class="page-title">The Atigma Catalogue</h2>
+  <p class="page-sub">Architectural tailoring for the modern woman — corporate, creative, and everything in between. Browse current pieces below; items marked sold out can still be viewed and preordered.</p>
+
+  <div class="toolbar">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products by name...">
+    </div>
+    <div class="count-pill" id="countPill">0 items</div>
+  </div>
+
+  <div id="catalogueGrid" class="grid"></div>
+</main>
+
+<div class="modal-overlay" id="productModalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProductModal()">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer>ATIGMA — Contemporary Ghanaian womenswear, made to order. &middot; <a href="admin.html">Admin</a></footer>
+
+<script src="js/api.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/catalogue.js"></script>
+</body>
+</html>

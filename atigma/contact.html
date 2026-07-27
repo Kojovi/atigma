@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — ATIGMA</title>
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topband">
+  <div class="brand-row">
+    <div class="brand">
+      <img class="brand-mark" src="images/logo.png" alt="ATIGMA">
+      <div class="brand-text">
+        <h1>Atigma</h1>
+        <p>Strength, refinement &amp; quiet confidence</p>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs">
+    <a class="nav-tab" href="index.html">Catalogue</a>
+    <a class="nav-tab" href="about.html">About</a>
+    <a class="nav-tab active" href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <p class="eyebrow">Get in touch</p>
+  <h2 class="page-title">Questions about a piece?</h2>
+  <p class="page-sub">Reach out on WhatsApp for a quick reply, or send an email for fittings, bespoke orders, and styling consultations.</p>
+
+  <div class="contact-grid">
+    <div class="whatsapp-card">
+      <h3>Chat on WhatsApp</h3>
+      <p>Tap below to open a WhatsApp chat with your question already started.</p>
+      <a id="waButton" class="wa-btn" href="#" target="_blank" rel="noopener">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.86 8.86 0 0 0-7.6 13.4L3 21l3.7-1.3A8.86 8.86 0 0 0 12 21a8.86 8.86 0 0 0 5.6-15.7Zm-5.6 13a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.4.8.8-2.4-.2-.3A7.3 7.3 0 1 1 12 19.3Zm4-5.5c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.6.7-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.3-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1l-.4-.2Z"/></svg>
+        <span>Message on WhatsApp</span>
+      </a>
+      <div class="contact-detail" id="waDetail"></div>
+    </div>
+
+    <div class="panel">
+      <h3 class="panel-title">Send an email</h3>
+      <p class="panel-note">Fills in your email app with the message below — nothing sends until you press send there.</p>
+      <form class="msg-form">
+        <label for="msgName">Your name</label>
+        <input type="text" id="msgName" required>
+
+        <label for="msgEmail">Your email</label>
+        <input type="email" id="msgEmail" required>
+
+        <label for="msgBody">Question</label>
+        <textarea id="msgBody" placeholder="Ask about a product, price, or availability..." required></textarea>
+
+        <button type="submit" class="btn btn-primary btn-full">Open email draft</button>
+      </form>
+      <p class="helper-text" id="emailHelper"></p>
+    </div>
+  </div>
+
+  <div class="social-section" id="socialSection" style="display:none;">
+    <h3>Follow Atigma</h3>
+    <p>See new collections, fittings, and behind-the-scenes from the studio.</p>
+    <div class="social-row" id="socialRow"></div>
+  </div>
+</main>
+
+<footer>ATIGMA — Contemporary Ghanaian womenswear, made to order. &middot; <a href="admin.html">Admin</a></footer>
+
+<script src="js/api.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

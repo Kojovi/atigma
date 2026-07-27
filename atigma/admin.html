@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — ATIGMA</title>
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topband">
+  <div class="brand-row">
+    <div class="brand">
+      <img class="brand-mark" src="images/logo.png" alt="ATIGMA">
+      <div class="brand-text">
+        <h1>Atigma</h1>
+        <p>Admin</p>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs">
+    <a class="nav-tab" href="index.html">Catalogue</a>
+    <a class="nav-tab" href="about.html">About</a>
+    <a class="nav-tab" href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ===================== LOGIN VIEW ===================== -->
+  <div id="loginView" class="admin-login-wrap">
+    <div class="admin-login-card">
+      <h2>Admin access</h2>
+      <p>Enter the passcode to manage stock, contact details, and the site theme.</p>
+      <form id="loginForm">
+        <label for="passcodeInput" style="margin-top:0;">Passcode</label>
+        <input type="password" id="passcodeInput" autocomplete="off" required>
+        <div class="admin-error" id="loginError"></div>
+        <button type="submit" class="btn btn-primary btn-full">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================== DASHBOARD VIEW ===================== -->
+  <div id="dashboardView" style="display:none;">
+    <div class="admin-topbar">
+      <div>
+        <p class="eyebrow">Back office</p>
+        <h2 class="page-title" style="margin-bottom:0;">Manage Atigma</h2>
+      </div>
+      <button class="btn btn-ghost" onclick="logout()">Log out</button>
+    </div>
+
+    <div class="panel" style="margin-bottom:24px;">
+      <h3 class="panel-title">Site theme</h3>
+      <p class="panel-note">Pick a look for the whole catalogue. It changes for every visitor, not just you.</p>
+      <div class="theme-grid" id="themeGrid"></div>
+    </div>
+
+    <div class="manage-layout" style="margin-bottom:34px;">
+      <div class="panel">
+        <h3 class="panel-title">Post a new product</h3>
+        <p class="panel-note">A product ID is assigned automatically.</p>
+        <form id="addForm">
+          <label for="newName">Product name</label>
+          <input type="text" id="newName" placeholder="e.g. Structured wrap blazer" required>
+
+          <label for="newPrice">Price (GHS)</label>
+          <input type="number" id="newPrice" placeholder="0.00" min="0" step="0.01" required>
+
+          <label for="newDesc">Description</label>
+          <textarea id="newDesc" placeholder="Short description customers will see"></textarea>
+
+          <label for="newImages">Product photos (up to 5)</label>
+          <input type="file" id="newImages" accept="image/*" multiple onchange="handleNewImages(event)">
+          <div class="thumb-strip" id="newImagesPreview" style="display:none;"></div>
+          <p class="image-count-note" id="newImagesCount"></p>
+
+          <button type="submit" class="btn btn-primary btn-full">Post product</button>
+        </form>
+      </div>
+
+      <div>
+        <div id="manageList" class="manage-list"></div>
+      </div>
+    </div>
+
+    <div class="panel" style="max-width:520px;">
+      <h3 class="panel-title">Founder photo</h3>
+      <p class="panel-note">Shown on the About page.</p>
+      <img id="founderPhotoPreview" style="display:none; width:160px; height:200px; object-fit:cover; border-radius:6px; margin-bottom:12px;" alt="">
+      <input type="file" accept="image/*" onchange="handleFounderPhoto(event)">
+    </div>
+
+    <div class="panel" style="max-width:520px; margin-top:24px;">
+      <h3 class="panel-title">Contact &amp; social details</h3>
+      <p class="panel-note">Shown to customers on the Contact page.</p>
+
+      <label for="settingEmail">Contact email</label>
+      <input type="email" id="settingEmail">
+
+      <label for="settingWa">WhatsApp number (with country code, digits only)</label>
+      <input type="tel" id="settingWa" placeholder="e.g. 233241234567">
+
+      <label for="settingWaMsg">Default WhatsApp message</label>
+      <textarea id="settingWaMsg"></textarea>
+
+      <label for="settingInstagram">Instagram link</label>
+      <input type="text" id="settingInstagram" placeholder="https://instagram.com/atigma">
+
+      <label for="settingLinkedin">LinkedIn link</label>
+      <input type="text" id="settingLinkedin" placeholder="https://linkedin.com/company/atigma">
+
+      <label for="settingFacebook">Facebook link</label>
+      <input type="text" id="settingFacebook" placeholder="https://facebook.com/atigma">
+
+      <label for="settingTiktok">TikTok link</label>
+      <input type="text" id="settingTiktok" placeholder="https://tiktok.com/@atigma">
+
+      <label for="settingPasscode">Change admin passcode (leave blank to keep current)</label>
+      <input type="text" id="settingPasscode" autocomplete="off">
+
+      <button class="btn btn-primary btn-full" onclick="saveContactSettings()">Save details</button>
+      <p class="helper-text" id="settingsSavedNote"></p>
+    </div>
+  </div>
+
+</main>
+
+<footer>ATIGMA — Admin dashboard. Changes here go live for every visitor immediately.</footer>
+
+<script src="js/api.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
